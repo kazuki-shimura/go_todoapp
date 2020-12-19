@@ -12,3 +12,6 @@
 
     sqlite3コマンド集
     https://qiita.com/ChiakiYamaoka/items/b7c7863688d6f23c0501
+
+    UUID作成用
+    go get github.com/google/uuid
