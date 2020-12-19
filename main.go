@@ -7,7 +7,6 @@ import (
 	"./models"
 )
 
-
 func main() {
 	// fmt.Println(config.Config.Port)
 	// fmt.Println(config.Config.SQLDriver)
@@ -18,11 +17,17 @@ func main() {
 
 	fmt.Println(models.Db)
 
-	u := &models.User{}
-	u.Name = "test"
-	u.Email = "test@gmail.com"
-	u.PassWord = "testtest"
-	fmt.Println(u)
+	// User作成
+	// u := &models.User{}
+	// u.Name = "test"
+	// u.Email = "test@gmail.com"
+	// u.PassWord = "testtest"
+	// fmt.Println(u)
+	// u.CreateUser()
 
-	u.CreateUser()
+
+	// Userの取得
+	u, _ := models.GetUser(1)
+	fmt.Println(u)
 }
+
