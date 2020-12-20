@@ -26,6 +26,7 @@ func init() {
 		log.Fatalln(err)
 	}
 
+	//Userテーブルがなければ作成する
 	cmdU := fmt.Sprintf(`create table if not exists %s(
 		id integer primary key autoincrement,
 		uuid string not null unique,
@@ -33,14 +34,17 @@ func init() {
 		email string,
 		password string,
 		created_at datetime)`, tableNameUser)
+	//コマンドを実行する
 	Db.Exec(cmdU)
 }
 
+// UUIDのパッケージを使用してUUIDを作成する
 func createUUID() (uuidobj uuid.UUID) {
 	uuidobj, _ = uuid.NewUUID()
 	return uuidobj
 }
 
+// パスワードをハッシュ値にする
 func Encrypt(plaintext string) (cryptext string) {
 	cryptext = fmt.Sprintf("%x", sha1.Sum([]byte(plaintext)))
 	return cryptext

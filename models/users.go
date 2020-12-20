@@ -24,6 +24,7 @@ func (u *User) CreateUser() (err error) {
 		password,
 		created_at) values (?, ?, ?, ?, ?)`
 
+	// コマンドの実行
 	_, err = Db.Exec(cmd,
 		createUUID(),
 		u.Name, 
@@ -31,6 +32,7 @@ func (u *User) CreateUser() (err error) {
 		Encrypt(u.PassWord), 
 		time.Now())
 
+	// エラーがあればエラーのログを返す
 	if err != nil {
 		log.Fatalln(err)
 	}
