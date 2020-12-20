@@ -62,6 +62,8 @@ func GetUser(id int) (user User, err error) {
 // UpdateUser
 func (u *User) UpdateUser() (err error) {
 	cmd := `update users set name = ?, email = ? where id = ?`
+
+	// 更新されたNameとEmailを渡してSQL文を実行する
 	_, err = Db.Exec(cmd, u.Name, u.Email, u.ID)
 	if err != nil {
 		log.Fatalln(err)
