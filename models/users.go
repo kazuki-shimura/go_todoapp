@@ -45,6 +45,8 @@ func GetUser(id int) (user User, err error) {
 	user = User{}
 	cmd := `select id, uuid, name, email, password, created_at
 	from users where id = ?`
+
+	// idを渡すためにQueryRowを使用する（ただコマンドを渡すだけではない）
 	err = Db.QueryRow(cmd, id).Scan(
 		&user.ID,
 		&user.UUID,
