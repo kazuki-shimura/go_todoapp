@@ -1,2 +1,8 @@
 2020/12/17 22:28:26 main.go:16: test
 2020/12/21 23:55:15 main.go:53: test
+2020/12/22 00:01:08 main.go:53: test
+2020/12/22 00:02:53 main.go:53: test
+2020/12/22 00:05:16 main.go:53: test
+2020/12/22 00:07:05 main.go:53: test
+2020/12/22 00:07:05 people.go:28: UNIQUE constraint failed: people.email
+2020/12/22 00:07:50 main.go:53: test

@@ -54,5 +54,14 @@ func main() {
 
 	fmt.Println(models.Db)
 
+	// People作成
+	p := &models.People{}
+	p.Firstname = "people2"
+	p.Lastname = "people2"
+	p.Email = "people2@gmail.com"
+	p.Password = "people2"
+	fmt.Println(p)
+	p.CreatePeople()
+
 }
 
