@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	// "log"
-	// "./config"
+	"log"
+	"./config"
 	"./models"
 )
 
@@ -32,17 +32,27 @@ func main() {
 
 
 	// Userの更新
-	u.Name = "Test2"
-	u.Email = "test2@gmail.com"
-	u.UpdateUser()
-	u, _ = models.GetUser(2)
-	fmt.Println(u)
+	// u.Name = "Test2"
+	// u.Email = "test2@gmail.com"
+	// u.UpdateUser()
+	// u, _ = models.GetUser(2)
+	// fmt.Println(u)
 
 
 	// Userの削除
 	// u.DeleteUser()
 	// u, _ = models.GetUser(2)
 	// fmt.Println(u)
+
+
+	fmt.Println(config.Config.Port)
+	fmt.Println(config.Config.SQLDriver)
+	fmt.Println(config.Config.DbName)
+	fmt.Println(config.Config.LogFile)
+
+	log.Println("test")
+
+	fmt.Println(models.Db)
 
 }
 

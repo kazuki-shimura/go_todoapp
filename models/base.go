@@ -18,6 +18,7 @@ var err error
 
 const (
 	tableNameUser = "users"
+	tableNamePeople = "people"
 )
 
 func init() {
@@ -36,6 +37,18 @@ func init() {
 		created_at datetime)`, tableNameUser)
 	//コマンドを実行する
 	Db.Exec(cmdU)
+
+	cmdP := fmt.Sprintf(`create table if not exists %s(
+		id integer primary key autoincrement,
+		uuid string not null unique,
+		firstname string, 
+		lastname string, 
+		email string unique,
+		password string,
+		created_at datetime,
+		updated_at datetime 
+	)`, tableNamePeople)
+	Db.Exec(cmdP)
 }
 
 // UUIDのパッケージを使用してUUIDを作成する
