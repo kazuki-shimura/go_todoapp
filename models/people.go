@@ -28,4 +28,23 @@ func (p *People) CreatePeople() (err error) {
 		log.Fatalln(err)
 	}
 	return err 
-} 
+}
+
+// Peopleの取得
+func GetPeople(id int) (people People, err error) {
+	people = People{}
+	cmd := `select id, uuid, firstname, lastname, email, password, 
+		created_at, updated_at from people where id = ?`
+	
+	err = Db.QueryRow(cmd, id).Scan(
+		&people.ID,
+		&people.UUID,
+		&people.Firstname,
+		&people.Lastname,
+		&people.Email,
+		&people.Password,
+		&people.CreatedAt,
+		&people.UpdatedAt,
+	)
+	return people, err
+}

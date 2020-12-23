@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
-	"./config"
+	// "./config"
 	"./models"
 )
 
@@ -15,7 +15,7 @@ func main() {
 
 	// log.Println("test")
 
-	fmt.Println(models.Db)
+	// fmt.Println(models.Db)
 
 	// User作成
 	// u := &models.User{}
@@ -27,8 +27,8 @@ func main() {
 
 
 	// Userの取得
-	u, _ := models.GetUser(2)
-	fmt.Println(u)
+	// u, _ := models.GetUser(2)
+	// fmt.Println(u)
 
 
 	// Userの更新
@@ -45,23 +45,28 @@ func main() {
 	// fmt.Println(u)
 
 
-	fmt.Println(config.Config.Port)
-	fmt.Println(config.Config.SQLDriver)
-	fmt.Println(config.Config.DbName)
-	fmt.Println(config.Config.LogFile)
+
+	// -------------------------------------------
+	// fmt.Println(config.Config.Port)
+	// fmt.Println(config.Config.SQLDriver)
+	// fmt.Println(config.Config.DbName)
+	// fmt.Println(config.Config.LogFile)
 
 	log.Println("test")
 
 	fmt.Println(models.Db)
 
 	// People作成
-	p := &models.People{}
-	p.Firstname = "people2"
-	p.Lastname = "people2"
-	p.Email = "people2@gmail.com"
-	p.Password = "people2"
+	// p := &models.People{}
+	// p.Firstname = "people2"
+	// p.Lastname = "people2"
+	// p.Email = "people2@gmail.com"
+	// p.Password = "people2"
+	// fmt.Println(p)
+	// p.CreatePeople()
+
+	p, _ := models.GetPeople(1)
 	fmt.Println(p)
-	p.CreatePeople()
 
 }
 
