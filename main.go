@@ -68,5 +68,13 @@ func main() {
 	p, _ := models.GetPeople(1)
 	fmt.Println(p)
 
+	// Peopleの更新
+	p.Firstname = "Test2People"
+	p.Lastname = "22222"
+	p.Email = "test2People@gmail.com"
+	p.UpdatePeople()
+	p, _ = models.GetPeople(1)
+	fmt.Println(p)
+
 }
 

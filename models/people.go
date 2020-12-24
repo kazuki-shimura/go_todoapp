@@ -50,3 +50,18 @@ func GetPeople(id int) (people People, err error) {
 	)
 	return people, err
 }
+
+// // People全取得
+// func GetAllPeople() (people People, err error) {
+// 	peoples = 
+// }
+
+// Peopleの更新
+func (p *People) UpdatePeople() (err error) {
+	cmd := `update people set firstname = ?, lastname = ?, email = ? where id = ?`
+	_, err = Db.Exec(cmd, p.Firstname, p.Lastname, p.Email, p.ID)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err 
+}
