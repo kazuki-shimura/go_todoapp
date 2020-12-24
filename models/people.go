@@ -18,8 +18,10 @@ type People struct {
 
 // Peopleの作成
 func (p *People) CreatePeople() (err error) {
-	cmd := `insert into people (uuid, firstname, lastname, email, 
-		password, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)`
+	cmd := `insert into people (
+		uuid, firstname, lastname, email, 
+		password, created_at, updated_at) 
+		values (?, ?, ?, ?, ?, ?, ?)`
 	
 	_, err = Db.Exec(cmd, createUUID(), p.Firstname, p.Lastname, p.Email,
 		Encrypt(p.Password), time.Now(), time.Now())
