@@ -76,5 +76,10 @@ func main() {
 	p, _ = models.GetPeople(1)
 	fmt.Println(p)
 
+	// Peopleの削除
+	// p.DeletePeople()
+	// p, _ = models.GetPeople(1)
+	// fmt.Println(p)
+
 }
 

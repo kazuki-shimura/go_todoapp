@@ -65,3 +65,13 @@ func (p *People) UpdatePeople() (err error) {
 	}
 	return err 
 }
+
+//Peopleの削除
+func (p *People) DeletePeople() (err error) {
+	cmd := `delete from people where id = ?`
+	_, err = Db.Exec(cmd, p.ID)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err 
+}
