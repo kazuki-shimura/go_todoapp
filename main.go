@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"log"
+	// "log"
 	// "./config"
 	"./models"
 )
 
 func main() {
+	fmt.Println(models.Db)
 	// fmt.Println(config.Config.Port)
 	// fmt.Println(config.Config.SQLDriver)
 	// fmt.Println(config.Config.DbName)
@@ -52,9 +53,9 @@ func main() {
 	// fmt.Println(config.Config.DbName)
 	// fmt.Println(config.Config.LogFile)
 
-	log.Println("test")
+	// log.Println("test")
 
-	fmt.Println(models.Db)
+	// fmt.Println(models.Db)
 
 	// People作成
 	// p := &models.People{}
@@ -65,16 +66,16 @@ func main() {
 	// fmt.Println(p)
 	// p.CreatePeople()
 
-	p, _ := models.GetPeople(1)
-	fmt.Println(p)
+	// p, _ := models.GetPeople(1)
+	// fmt.Println(p)
 
 	// Peopleの更新
-	p.Firstname = "Test2People"
-	p.Lastname = "22222"
-	p.Email = "test2People@gmail.com"
-	p.UpdatePeople()
-	p, _ = models.GetPeople(1)
-	fmt.Println(p)
+	// p.Firstname = "Test2People"
+	// p.Lastname = "22222"
+	// p.Email = "test2People@gmail.com"
+	// p.UpdatePeople()
+	// p, _ = models.GetPeople(1)
+	// fmt.Println(p)
 
 	// Peopleの削除
 	// p.DeletePeople()
