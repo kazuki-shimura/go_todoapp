@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	fmt.Println(models.Db)
+	// fmt.Println(models.Db)
 	// fmt.Println(config.Config.Port)
 	// fmt.Println(config.Config.SQLDriver)
 	// fmt.Println(config.Config.DbName)
@@ -19,12 +19,12 @@ func main() {
 	// fmt.Println(models.Db)
 
 	// User作成
-	u := &models.User{}
-	u.Name = "test"
-	u.Email = "test@gmail.com"
-	u.PassWord = "testtest"
-	fmt.Println(u)
-	u.CreateUser()
+	// u := &models.User{}
+	// u.Name = "test"
+	// u.Email = "test@gmail.com"
+	// u.PassWord = "testtest"
+	// fmt.Println(u)
+	// u.CreateUser()
 
 
 	// Userの取得
@@ -83,8 +83,16 @@ func main() {
 	// p, _ = models.GetPeople(1)
 	// fmt.Println(p)
 
-	user, _ := models.GetUser(4)
-	user.CreateTodo("First todo")
+	// user, _ := models.GetUser(4)
+	// user.CreateTodo("5 todo")
+
+	// t, _ := models.GetTodo(1)
+	// fmt.Println(t)
+
+	todos, _ := models.GetTodos()
+	for _, v := range todos {
+		fmt.Println(v)
+	}
 
 }
 
