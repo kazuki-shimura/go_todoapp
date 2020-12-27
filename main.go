@@ -101,5 +101,9 @@ func main() {
 		fmt.Println(v)
 	}
 
+	t, _ := models.GetTodo(1)
+	t.Content = "Update Todo"
+	t.UpdateTodo()
+
 }
 
