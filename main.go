@@ -11,7 +11,13 @@ import (
 func main() {
 	fmt.Println(models.Db)
 	
+	peoples, _ := models.GetAllPeople()
+	for _, v := range peoples {
+		fmt.Println(v)
+	}
+	fmt.Println("-------------------------")
 	controllers.StartMainServer()
+
 }
 
 // func main() {
