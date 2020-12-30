@@ -5,20 +5,14 @@ import (
 	// "log"
 	// "./config"
 	"./models"
-	"./controllers"
+	// "./controllers"
 )
 
-func main() {
-	fmt.Println(models.Db)
-	
-	peoples, _ := models.GetAllPeople()
-	for _, v := range peoples {
-		fmt.Println(v)
-	}
-	fmt.Println("-------------------------")
-	controllers.StartMainServer()
+// func main() {
+// 	fmt.Println(models.Db)
+// 	controllers.StartMainServer()
 
-}
+// }
 
 // func main() {
 // 	// fmt.Println(models.Db)
@@ -83,6 +77,12 @@ func main() {
 // 	// p, _ := models.GetPeople(1)
 // 	// fmt.Println(p)
 
+// peoples, _ := models.GetAllPeople()
+// 	for _, v := range peoples {
+// 		fmt.Println(v)
+// 	}
+// 	fmt.Println("-------------------------")
+
 // 	// Peopleの更新
 // 	// p.Firstname = "Test2People"
 // 	// p.Lastname = "22222"
@@ -122,4 +122,8 @@ func main() {
 // 	// t.DeleteTodo()
 
 // }
+
+func main() {
+	// fmt.Println(models.Db)
+}
 
