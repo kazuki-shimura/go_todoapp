@@ -125,5 +125,14 @@ import (
 
 func main() {
 	// fmt.Println(models.Db)
+	// AAAの作成
+	a := &models.AAA{}
+	a.First = "firstAAA"
+	a.Second = "secondAAA"
+	a.Third = "thirdAAA"
+	a.Email = "aaa@gmail.com"
+	a.Password = "aaaaaaaa"
+	fmt.Println(a)
+	a.CreateAAA()
 }
 

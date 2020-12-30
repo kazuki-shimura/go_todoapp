@@ -20,7 +20,7 @@ const (
 	tableNameUser = "users"
 	// tableNamePeople = "people"
 	tableNameTodo = "todos"
-	tableNameA = "aaa"
+	tableNameAAA = "aaa"
 )
 
 func init() {
@@ -60,7 +60,7 @@ func init() {
 	Db.Exec(cmdT)
 
 	cmdA := fmt.Sprintf(`create table if not exists %s(
-		id integer primary key autoincreament,
+		id integer primary key autoincrement,
 		uuid string not null unique,
 		first string,
 		second string,
@@ -68,8 +68,10 @@ func init() {
 		email string,
 		password string,
 		created_at datetime,
-		updated_at datetime)`, tableNameA)
+		updated_at datetime)`, tableNameAAA)
 	Db.Exec(cmdA)
+	// cmdd := fmt.Sprintf(`delete from aaa`)
+	// Db.Exec(cmdd)
 }
 
 // UUIDのパッケージを使用してUUIDを作成する

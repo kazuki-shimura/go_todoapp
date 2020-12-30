@@ -810,3 +810,5 @@ net/http.(*conn).serve(0xc00013e0a0, 0x45d58c0, 0xc00007a2c0)
 	/usr/local/Cellar/go/1.15.5/libexec/src/net/http/server.go:1925 +0x8ad
 created by net/http.(*Server).Serve
 	/usr/local/Cellar/go/1.15.5/libexec/src/net/http/server.go:2969 +0x36c
+2020/12/30 17:01:23 aaa.go:30: no such table: aaa
+2020/12/30 17:04:13 aaa.go:30: no such table: aaa
