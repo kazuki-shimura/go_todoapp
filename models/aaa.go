@@ -31,3 +31,22 @@ func (a *AAA) CreateAAA() (err error) {
 	}
 	return err
 }
+
+// aaaの取得
+func GetAAA(id int) (aaa AAA, err error) {
+	aaa = AAA{}
+	cmd := `select id, uuid, first, second, third, email, password, created_at, updated_at
+		from aaa where id = ?`
+	err = Db.QueryRow(cmd, id).Scan(
+		&aaa.Id,
+		&aaa.Uuid,
+		&aaa.First,
+		&aaa.Second,
+		&aaa.Third,
+		&aaa.Email,
+		&aaa.Password,
+		&aaa.CreatedAt,
+		&aaa.UpdatedAt,
+	)
+	return aaa, err
+}
