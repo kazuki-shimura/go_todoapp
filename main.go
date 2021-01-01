@@ -145,13 +145,18 @@ func main() {
 	}
 
 	// Peopleの更新
-	aaa1, _ := models.GetAAA(1)
-	aaa1.First = "Test1aaa"
-	aaa1.Second = "111aaa"
-	aaa1.Third = "aaa"
-	aaa1.UpdateAAA()
-	aaa1, _ = models.GetAAA(1)
-	fmt.Println(aaa1)
+	// aaa1, _ := models.GetAAA(1)
+	// aaa1.First = "Test1aaa"
+	// aaa1.Second = "111aaa"
+	// aaa1.Third = "aaa"
+	// aaa1.UpdateAAA()
+	// aaa1, _ = models.GetAAA(1)
+	// fmt.Println(aaa1)
+
+	// aaaの削除
+	// a, _ = models.GetAAA(4)
+	// a.DeleteAAA()
+	// fmt.Println(a)
 }
 
 

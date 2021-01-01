@@ -82,3 +82,13 @@ func (a *AAA) UpdateAAA() (err error) {
 	}
 	return err 
 }
+
+// aaaの削除
+func (a *AAA) DeleteAAA() error {
+	cmd := `delete from aaa where id = ?`
+	_, err = Db.Exec(cmd, a.Id)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err 
+}
