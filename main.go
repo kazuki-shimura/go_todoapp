@@ -135,6 +135,7 @@ func main() {
 	// fmt.Println(a)
 	// a.CreateAAA()
 
+	// aaaの取得・全取得
 	a, _ := models.GetAAA(1)
 	fmt.Println(a)
 	fmt.Println("-------------------------")
@@ -142,5 +143,15 @@ func main() {
 	for _, v := range aaas {
 		fmt.Println(v)
 	}
+
+	// Peopleの更新
+	aaa1, _ := models.GetAAA(1)
+	aaa1.First = "Test1aaa"
+	aaa1.Second = "111aaa"
+	aaa1.Third = "aaa"
+	aaa1.UpdateAAA()
+	aaa1, _ = models.GetAAA(1)
+	fmt.Println(aaa1)
 }
+
 

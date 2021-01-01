@@ -72,3 +72,13 @@ func GetAAAs() (aaas []AAA, err error) {
 	rows.Close()
 	return aaas, err
 }
+
+// aaaの更新
+func (a *AAA) UpdateAAA() (err error) {
+	cmd := `update aaa set first = ?, second = ?, third = ? where id = ?`
+	_, err = Db.Exec(cmd, a.First, a.Second, a.Third, a.Id)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err 
+}
