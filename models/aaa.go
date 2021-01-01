@@ -50,3 +50,25 @@ func GetAAA(id int) (aaa AAA, err error) {
 	)
 	return aaa, err
 }
+
+// aaaの全取得
+func GetAAAs() (aaas []AAA, err error) {
+	cmd := `select id, uuid, first, second, third, email, password,
+	created_at, updated_at from aaa`
+	rows, err := Db.Query(cmd)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	for rows.Next() {
+		var aaa AAA
+		err = rows.Scan(&aaa.Id, &aaa.Uuid, &aaa.First, &aaa.Second, &aaa.Third,
+		&aaa.Email, &aaa.Password, &aaa.CreatedAt, &aaa.UpdatedAt)
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+		aaas = append(aaas, aaa)
+	}
+	rows.Close()
+	return aaas, err
+}

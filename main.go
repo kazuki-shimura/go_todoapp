@@ -137,5 +137,10 @@ func main() {
 
 	a, _ := models.GetAAA(1)
 	fmt.Println(a)
+	fmt.Println("-------------------------")
+	aaas, _ := models.GetAAAs()
+	for _, v := range aaas {
+		fmt.Println(v)
+	}
 }
 
